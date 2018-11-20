@@ -1,3 +1,5 @@
+![Travis](https://travis-ci.com/flyinbutrs/clashroyale-sdk.svg?branch=master)
+
 # clashroyale-sdk
 Python SDK for the Supercell's [Clash Royale](https://clashroyale.com). Developers can get started at [developer.clashroyale.com](https://developer.clashroyale.com/). You first need an account and an API token.
 
