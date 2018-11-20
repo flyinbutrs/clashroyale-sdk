@@ -38,18 +38,18 @@ class ClansApi(object):
 
         Get information about a single clan by clan tag. Clan tags can be found using clan search operation.  Note that clan tags start with hash character '#' and that needs to be URL-encoded properly to work in URL, so for example clan tag '#2ABC' would become '%232ABC' in the URL.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_clan(clan_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_clan(clan_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str clan_tag: Tag of the clan to retrieve.  (required)
         :return: Clan
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_clan_with_http_info(clan_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.get_clan_with_http_info(clan_tag, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class ClansApi(object):
 
         Get information about a single clan by clan tag. Clan tags can be found using clan search operation.  Note that clan tags start with hash character '#' and that needs to be URL-encoded properly to work in URL, so for example clan tag '#2ABC' would become '%232ABC' in the URL.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_clan_with_http_info(clan_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_clan_with_http_info(clan_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str clan_tag: Tag of the clan to retrieve.  (required)
         :return: Clan
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class ClansApi(object):
         """
 
         all_params = ['clan_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class ClansApi(object):
             files=local_var_files,
             response_type='Clan',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,11 +137,11 @@ class ClansApi(object):
 
         List clan members  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_clan_members(clan_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_clan_members(clan_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str clan_tag: Tag of the clan whose members to retrieve. (required)
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -151,7 +151,7 @@ class ClansApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_clan_members_with_http_info(clan_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.get_clan_members_with_http_info(clan_tag, **kwargs)  # noqa: E501
@@ -162,11 +162,11 @@ class ClansApi(object):
 
         List clan members  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_clan_members_with_http_info(clan_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_clan_members_with_http_info(clan_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str clan_tag: Tag of the clan whose members to retrieve. (required)
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -177,7 +177,7 @@ class ClansApi(object):
         """
 
         all_params = ['clan_tag', 'limit', 'after', 'before']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -237,7 +237,7 @@ class ClansApi(object):
             files=local_var_files,
             response_type='ClanMemberList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -248,11 +248,11 @@ class ClansApi(object):
 
         Retrieve clan's clan war log  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_clan_war_log(clan_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_clan_war_log(clan_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str clan_tag: Tag of the clan whose war log to retrieve. (required)
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -262,7 +262,7 @@ class ClansApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_clan_war_log_with_http_info(clan_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.get_clan_war_log_with_http_info(clan_tag, **kwargs)  # noqa: E501
@@ -273,11 +273,11 @@ class ClansApi(object):
 
         Retrieve clan's clan war log  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_clan_war_log_with_http_info(clan_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_clan_war_log_with_http_info(clan_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str clan_tag: Tag of the clan whose war log to retrieve. (required)
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -288,7 +288,7 @@ class ClansApi(object):
         """
 
         all_params = ['clan_tag', 'limit', 'after', 'before']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -348,7 +348,7 @@ class ClansApi(object):
             files=local_var_files,
             response_type='WarLog',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -359,18 +359,18 @@ class ClansApi(object):
 
         Retrieve information about clan's current clan war  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_current_war(clan_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_current_war(clan_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str clan_tag: Tag of the clan whose war log to retrieve. (required)
         :return: CurrentWar
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_current_war_with_http_info(clan_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.get_current_war_with_http_info(clan_tag, **kwargs)  # noqa: E501
@@ -381,11 +381,11 @@ class ClansApi(object):
 
         Retrieve information about clan's current clan war  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_current_war_with_http_info(clan_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_current_war_with_http_info(clan_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str clan_tag: Tag of the clan whose war log to retrieve. (required)
         :return: CurrentWar
                  If the method is called asynchronously,
@@ -393,7 +393,7 @@ class ClansApi(object):
         """
 
         all_params = ['clan_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -447,7 +447,7 @@ class ClansApi(object):
             files=local_var_files,
             response_type='CurrentWar',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -458,11 +458,11 @@ class ClansApi(object):
 
         Search all clans by name and/or filtering the results using various criteria. At least one filtering criteria must be defined and if name is used as part of search, it is required to be at least three characters long.  It is not possible to specify ordering for results so clients should not rely on any specific ordering as that may change in the future releases of the API.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_clans(async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.search_clans(send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str name: Search clans by name. If name is used as part of search query, it needs to be at least three characters long. Name search parameter is interpreted as wild card search, so it may appear anywhere in the clan name. 
         :param int location_id: Filter by clan location identifier. For list of available locations, refer to getLocations operation. 
         :param int min_members: Filter by minimum amount of clan members. 
@@ -476,7 +476,7 @@ class ClansApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.search_clans_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.search_clans_with_http_info(**kwargs)  # noqa: E501
@@ -487,11 +487,11 @@ class ClansApi(object):
 
         Search all clans by name and/or filtering the results using various criteria. At least one filtering criteria must be defined and if name is used as part of search, it is required to be at least three characters long.  It is not possible to specify ordering for results so clients should not rely on any specific ordering as that may change in the future releases of the API.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_clans_with_http_info(async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.search_clans_with_http_info(send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str name: Search clans by name. If name is used as part of search query, it needs to be at least three characters long. Name search parameter is interpreted as wild card search, so it may appear anywhere in the clan name. 
         :param int location_id: Filter by clan location identifier. For list of available locations, refer to getLocations operation. 
         :param int min_members: Filter by minimum amount of clan members. 
@@ -506,7 +506,7 @@ class ClansApi(object):
         """
 
         all_params = ['name', 'location_id', 'min_members', 'max_members', 'min_score', 'limit', 'after', 'before']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -573,7 +573,7 @@ class ClansApi(object):
             files=local_var_files,
             response_type='ClanSearchResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

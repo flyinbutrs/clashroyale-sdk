@@ -38,18 +38,18 @@ class PlayersApi(object):
 
         Get information about a single player by player tag. Player tags can be found either in game or by from clan member lists.  Note that player tags start with hash character '#' and that needs to be URL-encoded properly to work in URL, so for example player tag '#2ABC' would become '%232ABC' in the URL.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_player(player_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_player(player_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str player_tag: Tag of the player to retrieve.  (required)
         :return: PlayerDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_player_with_http_info(player_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.get_player_with_http_info(player_tag, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class PlayersApi(object):
 
         Get information about a single player by player tag. Player tags can be found either in game or by from clan member lists.  Note that player tags start with hash character '#' and that needs to be URL-encoded properly to work in URL, so for example player tag '#2ABC' would become '%232ABC' in the URL.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_player_with_http_info(player_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_player_with_http_info(player_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str player_tag: Tag of the player to retrieve.  (required)
         :return: PlayerDetail
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class PlayersApi(object):
         """
 
         all_params = ['player_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class PlayersApi(object):
             files=local_var_files,
             response_type='PlayerDetail',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class PlayersApi(object):
 
         Get list of recent battle results for a player.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_player_battles(player_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_player_battles(player_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str player_tag: Tag of the player whose information to retrieve.  (required)
         :return: BattleLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_player_battles_with_http_info(player_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.get_player_battles_with_http_info(player_tag, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class PlayersApi(object):
 
         Get list of recent battle results for a player.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_player_battles_with_http_info(player_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_player_battles_with_http_info(player_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str player_tag: Tag of the player whose information to retrieve.  (required)
         :return: BattleLog
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class PlayersApi(object):
         """
 
         all_params = ['player_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -225,7 +225,7 @@ class PlayersApi(object):
             files=local_var_files,
             response_type='BattleLog',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -236,18 +236,18 @@ class PlayersApi(object):
 
         Get list of reward chests that the player will receive next in the game.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_player_upcoming_chests(player_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_player_upcoming_chests(player_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str player_tag: Tag of the player whose information to retrieve.  (required)
         :return: UpcomingChestsList
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_player_upcoming_chests_with_http_info(player_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.get_player_upcoming_chests_with_http_info(player_tag, **kwargs)  # noqa: E501
@@ -258,11 +258,11 @@ class PlayersApi(object):
 
         Get list of reward chests that the player will receive next in the game.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_player_upcoming_chests_with_http_info(player_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_player_upcoming_chests_with_http_info(player_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str player_tag: Tag of the player whose information to retrieve.  (required)
         :return: UpcomingChestsList
                  If the method is called asynchronously,
@@ -270,7 +270,7 @@ class PlayersApi(object):
         """
 
         all_params = ['player_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -324,7 +324,7 @@ class PlayersApi(object):
             files=local_var_files,
             response_type='UpcomingChestsList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

@@ -38,18 +38,18 @@ class TournamentsApi(object):
 
         Get information about a single tournament by a tournament tag.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_tournament(tournament_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_tournament(tournament_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str tournament_tag: Tag of the tournament to retrieve.  (required)
         :return: Tournament
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_tournament_with_http_info(tournament_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.get_tournament_with_http_info(tournament_tag, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class TournamentsApi(object):
 
         Get information about a single tournament by a tournament tag.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_tournament_with_http_info(tournament_tag, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_tournament_with_http_info(tournament_tag, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str tournament_tag: Tag of the tournament to retrieve.  (required)
         :return: Tournament
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class TournamentsApi(object):
         """
 
         all_params = ['tournament_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class TournamentsApi(object):
             files=local_var_files,
             response_type='Tournament',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,11 +137,11 @@ class TournamentsApi(object):
 
         Search all tournaments by name.  It is not possible to specify ordering for results so clients should not rely on any specific ordering as that may change in the future releases of the API.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_tournaments(async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.search_tournaments(send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str name: Search tournaments by name. 
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -151,7 +151,7 @@ class TournamentsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.search_tournaments_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.search_tournaments_with_http_info(**kwargs)  # noqa: E501
@@ -162,11 +162,11 @@ class TournamentsApi(object):
 
         Search all tournaments by name.  It is not possible to specify ordering for results so clients should not rely on any specific ordering as that may change in the future releases of the API.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_tournaments_with_http_info(async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.search_tournaments_with_http_info(send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str name: Search tournaments by name. 
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -177,7 +177,7 @@ class TournamentsApi(object):
         """
 
         all_params = ['name', 'limit', 'after', 'before']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -236,7 +236,7 @@ class TournamentsApi(object):
             files=local_var_files,
             response_type='TournamentSearchResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

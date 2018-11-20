@@ -38,11 +38,11 @@ class LocationsApi(object):
 
         Get clan rankings for a specific location  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_clan_ranking(location_id, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_clan_ranking(location_id, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str location_id: Identifier of the location to retrieve. (required)
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -52,7 +52,7 @@ class LocationsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_clan_ranking_with_http_info(location_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_clan_ranking_with_http_info(location_id, **kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class LocationsApi(object):
 
         Get clan rankings for a specific location  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_clan_ranking_with_http_info(location_id, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_clan_ranking_with_http_info(location_id, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str location_id: Identifier of the location to retrieve. (required)
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -78,7 +78,7 @@ class LocationsApi(object):
         """
 
         all_params = ['location_id', 'limit', 'after', 'before']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -138,7 +138,7 @@ class LocationsApi(object):
             files=local_var_files,
             response_type='ClanRankingList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -149,11 +149,11 @@ class LocationsApi(object):
 
         Get clan war rankings for a specific location  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_clan_wars_ranking(location_id, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_clan_wars_ranking(location_id, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str location_id: Identifier of the location to retrieve. (required)
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -163,7 +163,7 @@ class LocationsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_clan_wars_ranking_with_http_info(location_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_clan_wars_ranking_with_http_info(location_id, **kwargs)  # noqa: E501
@@ -174,11 +174,11 @@ class LocationsApi(object):
 
         Get clan war rankings for a specific location  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_clan_wars_ranking_with_http_info(location_id, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_clan_wars_ranking_with_http_info(location_id, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str location_id: Identifier of the location to retrieve. (required)
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -189,7 +189,7 @@ class LocationsApi(object):
         """
 
         all_params = ['location_id', 'limit', 'after', 'before']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -249,7 +249,7 @@ class LocationsApi(object):
             files=local_var_files,
             response_type='ClanWarsRankingList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -260,18 +260,18 @@ class LocationsApi(object):
 
         Get information about specific location  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_location(location_id, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_location(location_id, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str location_id: Identifier of the location to retrieve. (required)
         :return: Location
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_location_with_http_info(location_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_location_with_http_info(location_id, **kwargs)  # noqa: E501
@@ -282,11 +282,11 @@ class LocationsApi(object):
 
         Get information about specific location  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_location_with_http_info(location_id, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_location_with_http_info(location_id, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str location_id: Identifier of the location to retrieve. (required)
         :return: Location
                  If the method is called asynchronously,
@@ -294,7 +294,7 @@ class LocationsApi(object):
         """
 
         all_params = ['location_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -348,7 +348,7 @@ class LocationsApi(object):
             files=local_var_files,
             response_type='Location',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -359,11 +359,11 @@ class LocationsApi(object):
 
         List all available locations  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_locations(async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_locations(send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
         :param int before: Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -372,7 +372,7 @@ class LocationsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_locations_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_locations_with_http_info(**kwargs)  # noqa: E501
@@ -383,11 +383,11 @@ class LocationsApi(object):
 
         List all available locations  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_locations_with_http_info(async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_locations_with_http_info(send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
         :param int before: Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -397,7 +397,7 @@ class LocationsApi(object):
         """
 
         all_params = ['limit', 'after', 'before']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -451,7 +451,7 @@ class LocationsApi(object):
             files=local_var_files,
             response_type='LocationList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -462,11 +462,11 @@ class LocationsApi(object):
 
         Get player rankings for a specific location  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_player_ranking(location_id, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_player_ranking(location_id, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str location_id: Identifier of the location to retrieve. (required)
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -476,7 +476,7 @@ class LocationsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('send_async'):
             return self.get_player_ranking_with_http_info(location_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_player_ranking_with_http_info(location_id, **kwargs)  # noqa: E501
@@ -487,11 +487,11 @@ class LocationsApi(object):
 
         Get player rankings for a specific location  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_player_ranking_with_http_info(location_id, async=True)
+        asynchronous HTTP request, please pass send_async=True
+        >>> thread = api.get_player_ranking_with_http_info(location_id, send_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param send_async bool
         :param str location_id: Identifier of the location to retrieve. (required)
         :param int limit: Limit the number of items returned in the response. 
         :param int after: Return only items that occur after this marker. After marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both. 
@@ -502,7 +502,7 @@ class LocationsApi(object):
         """
 
         all_params = ['location_id', 'limit', 'after', 'before']  # noqa: E501
-        all_params.append('async')
+        all_params.append('send_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -562,7 +562,7 @@ class LocationsApi(object):
             files=local_var_files,
             response_type='PlayerRankingList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            send_async=params.get('send_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
